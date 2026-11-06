@@ -4,7 +4,7 @@
 
 | What | URL |
 |---|---|
-| **Sign up (use this link)** | <http://starvpn.cn/register.html?referralCode=Kurali> |
+| **Sign up (use this link)** | <https://starvpn.cn/register.html?referralCode=Kurali> |
 | Website | <https://starvpn.cn/> |
 | Clients (all platforms) | <https://doc.starvpn.cn/#/download> |
 | Linux install script | `https://file.starvpn.cn/stars/shell/prod/linux/install.sh` |
@@ -32,7 +32,7 @@ The installer has been observed leaving `stars run` attached to `systemd --user`
 Register **through this link**, not by typing the domain by hand:
 
 ```
-http://starvpn.cn/register.html?referralCode=Kurali
+https://starvpn.cn/register.html?referralCode=Kurali
 ```
 
 The `referralCode` parameter is what attributes the account to the inviter. Registering on

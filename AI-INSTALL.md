@@ -24,6 +24,22 @@ Do the work yourself. Verify with commands, not assumptions. Report at the end (
    `127.0.0.1:3080`; this kit deliberately adds a second instance on the mesh IP. If you
    see `listen EADDRINUSE: 127.0.0.1:3080`, that is the *first* instance winning — leave it.
 
+## 0.5 Before you start: plugin or scripts?
+
+Check whether the target machine already has DSH and a writable profile. If yes, the **plugin**
+is the smaller solution — one process, one session list, no SSH:
+
+```bash
+dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+```
+
+It binds a second listener inside the running server and reverse-proxies to it; the phone and the
+desktop then share one instance. Ask the user before installing it, and tell them a `dsh web`
+restart is required. Repo: <https://github.com/SilverKurali/dsh-phone-tunnel>
+
+Use the scripts in this repo when the user wants a separate instance, refuses to touch the
+profile, runs an older DSH, or wants the extras (QR code, firewall rule, keepalive, `--check`).
+
 ## 1. Platform matrix
 
 | | Linux | macOS | Windows |
@@ -42,7 +58,7 @@ yours is to verify it and to explain precisely what is missing.
 
 | What | Where |
 |---|---|
-| **Sign-up link (required entry point)** | <http://starvpn.cn/register.html?referralCode=Kurali> — the `referralCode` query parameter is the attribution; registering on the bare domain, inside the client, or from a search result loses it permanently |
+| **Sign-up link (required entry point)** | <https://starvpn.cn/register.html?referralCode=Kurali> — the `referralCode` query parameter is the attribution; registering on the bare domain, inside the client, or from a search result loses it permanently |
 | Website | <https://starvpn.cn/> (phone number + real-name verification) |
 | Clients for all platforms | <https://doc.starvpn.cn/#/download> |
 | Windows .exe (direct link pattern) | `https://download.starvpn.cn/starvpn/stars/releases/exe/<version>/StarVPN.exe` — this host did not resolve from the author's machine, so treat the docs download page as authoritative |

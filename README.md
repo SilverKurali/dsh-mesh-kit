@@ -8,6 +8,28 @@ Supports **Linux · macOS · Windows**.
 
 `[English](#what-it-solves) | [中文](#中文)`
 
+## Which one do I want: plugin or these scripts?
+
+There is now an official-looking shortcut. If DSH is already installed on the machine you want
+to reach and you're allowed to add a plugin to its profile, use the plugin — it is **one process**:
+
+```bash
+dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+```
+
+→ <https://github.com/SilverKurali/dsh-phone-tunnel> · <https://www.npmjs.com/package/dsh-phone-tunnel>
+
+The plugin binds a second listener **inside the running server** and reverse-proxies to it, so
+the phone and the desktop share one instance, one session list, and you never see
+`task-board ledger is already owned by …`.
+
+Use the scripts in this repo instead when:
+
+- you don't want to touch the profile, or DSH is older than `0.2.1-rc.2`;
+- you want a **separate** instance with its own profile and port, leaving your main one alone;
+- you want the extra bits: QR code, firewall rule, keepalive timer, `--check` self-test;
+- the machine has no npm/Node toolchain handy but you can still run a shell script.
+
 ## What it solves
 
 `dsh web` binds exactly **one concrete interface address** (wildcards are rejected):
@@ -25,7 +47,7 @@ hand you a token URL plus a QR code.
 
 ## Quickstart
 
-1. **Mesh first**: [sign up here](http://starvpn.cn/register.html?referralCode=Kurali) — the
+1. **Mesh first**: [sign up here](https://starvpn.cn/register.html?referralCode=Kurali) — the
    `referralCode` in that link is what attributes the account, so enter through it rather than
    typing the domain — then install the StarVPN client on the PC *and* the phone and log each in
    with its **own member account** (member ≠ master account — see
@@ -124,13 +146,32 @@ MIT licensed.
 
 ## 中文
 
+### 插件还是这套脚本？
+
+现在有条更省事的路。**要访问的那台机器上已经装了 DSH，并且允许往它的 profile 里加插件**，就用插件 —— 它只有**一个进程**：
+
+```bash
+dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+```
+
+→ <https://github.com/SilverKurali/dsh-phone-tunnel> · <https://www.npmjs.com/package/dsh-phone-tunnel>
+
+插件在**正在跑的服务进程内部**再开一个监听口做反向代理，所以手机和电脑是同一个实例、同一份会话列表，也不会出现 `task-board ledger is already owned by …` 那种抢锁报错。
+
+以下情况用本仓库的脚本：
+
+- 不想动 profile，或者 DSH 低于 `0.2.1-rc.2`；
+- 想要一个**独立**实例（自己的 profile、自己的端口），完全不干扰主实例；
+- 需要脚本附带的东西：二维码、防火墙规则、保活定时器、`--check` 自检；
+- 那台机器不方便装 npm 工具链，但能跑 shell 脚本。
+
 **一句话**：`dsh web` 只能绑一个具体网卡地址（不接受通配），所以桌面上的 `127.0.0.1:3080`
 手机看不见；开机后才出现的组网网卡（`StarVPN` / `utun*` / TAP）也不在它的监听范围内。
 这套脚本负责找网卡、绑组网 IP、放行端口、把 token 地址和二维码给你。
 
 **三步**：
 
-1. **先从这个邀请链接注册**：<http://starvpn.cn/register.html?referralCode=Kurali>
+1. **先从这个邀请链接注册**：<https://starvpn.cn/register.html?referralCode=Kurali>
    （链接里的 `referralCode` 才是归属凭据，直接输域名注册不算邀请）。
    然后电脑和手机各装星空组网客户端，**各用一个成员账号**登录并连接（成员账号 ≠ 主账号，
    见 [docs/STARVPN.md](docs/STARVPN.md)）。
