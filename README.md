@@ -14,10 +14,10 @@ There is now an official-looking shortcut. If DSH is already installed on the ma
 to reach and you're allowed to add a plugin to its profile, use the plugin — it is **one process**:
 
 ```bash
-dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.org
 ```
 
-→ <https://github.com/SilverKurali/dsh-phone-tunnel> · <https://www.npmjs.com/package/dsh-phone-tunnel>
+→ <https://github.com/SilverKurali/dsh-mesh-access> · <https://www.npmjs.com/package/dsh-mesh-access>
 
 The plugin binds a second listener **inside the running server** and reverse-proxies to it, so
 the phone and the desktop share one instance, one session list, and you never see
@@ -151,10 +151,10 @@ MIT licensed.
 现在有条更省事的路。**要访问的那台机器上已经装了 DSH，并且允许往它的 profile 里加插件**，就用插件 —— 它只有**一个进程**：
 
 ```bash
-dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.org
 ```
 
-→ <https://github.com/SilverKurali/dsh-phone-tunnel> · <https://www.npmjs.com/package/dsh-phone-tunnel>
+→ <https://github.com/SilverKurali/dsh-mesh-access> · <https://www.npmjs.com/package/dsh-mesh-access>
 
 插件在**正在跑的服务进程内部**再开一个监听口做反向代理，所以手机和电脑是同一个实例、同一份会话列表，也不会出现 `task-board ledger is already owned by …` 那种抢锁报错。
 

@@ -30,12 +30,12 @@ Check whether the target machine already has DSH and a writable profile. If yes,
 is the smaller solution — one process, one session list, no SSH:
 
 ```bash
-dsh plugin --profile web add dsh-phone-tunnel --registry=https://registry.npmjs.org
+dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.org
 ```
 
 It binds a second listener inside the running server and reverse-proxies to it; the phone and the
 desktop then share one instance. Ask the user before installing it, and tell them a `dsh web`
-restart is required. Repo: <https://github.com/SilverKurali/dsh-phone-tunnel>
+restart is required. Repo: <https://github.com/SilverKurali/dsh-mesh-access>
 
 Use the scripts in this repo when the user wants a separate instance, refuses to touch the
 profile, runs an older DSH, or wants the extras (QR code, firewall rule, keepalive, `--check`).
