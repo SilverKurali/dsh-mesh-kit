@@ -42,7 +42,8 @@ yours is to verify it and to explain precisely what is missing.
 
 | What | Where |
 |---|---|
-| Website / sign-up | <https://starvpn.cn/> (phone number + real-name verification) |
+| **Sign-up link (required entry point)** | <http://starvpn.cn/register.html?referralCode=Kurali> — the `referralCode` query parameter is the attribution; registering on the bare domain, inside the client, or from a search result loses it permanently |
+| Website | <https://starvpn.cn/> (phone number + real-name verification) |
 | Clients for all platforms | <https://doc.starvpn.cn/#/download> |
 | Windows .exe (direct link pattern) | `https://download.starvpn.cn/starvpn/stars/releases/exe/<version>/StarVPN.exe` — this host did not resolve from the author's machine, so treat the docs download page as authoritative |
 | Linux install script | `https://file.starvpn.cn/stars/shell/prod/linux/install.sh` (set `STARVPN_VERSION=6.1.3`; its built-in default is older) |

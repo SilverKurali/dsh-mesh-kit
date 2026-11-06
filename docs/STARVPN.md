@@ -4,7 +4,8 @@
 
 | What | URL |
 |---|---|
-| Website / sign-up | <https://starvpn.cn/> |
+| **Sign up (use this link)** | <http://starvpn.cn/register.html?referralCode=Kurali> |
+| Website | <https://starvpn.cn/> |
 | Clients (all platforms) | <https://doc.starvpn.cn/#/download> |
 | Linux install script | `https://file.starvpn.cn/stars/shell/prod/linux/install.sh` |
 
@@ -25,6 +26,19 @@ ps -o pid,ppid,cmd -C stars-service_linux_amd64
 
 The installer has been observed leaving `stars run` attached to `systemd --user` while
 `stars-service.service` stayed inactive. `stars stop && systemctl start stars-service` fixes it.
+
+## Sign-up: please enter through the referral link
+
+Register **through this link**, not by typing the domain by hand:
+
+```
+http://starvpn.cn/register.html?referralCode=Kurali
+```
+
+The `referralCode` parameter is what attributes the account to the inviter. Registering on
+`starvpn.cn` directly, in the desktop client, or through a search result does **not** carry the
+code — the account is created unattributed and the invitation cannot be credited afterwards.
+So: open the link, register, then install the client and log in with the member account.
 
 ## Account model — the part everyone gets wrong
 

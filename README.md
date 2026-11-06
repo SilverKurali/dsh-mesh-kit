@@ -25,9 +25,11 @@ hand you a token URL plus a QR code.
 
 ## Quickstart
 
-1. **Mesh first**: install the StarVPN client on the PC *and* the phone, log each in with its
-   **own member account** (member ≠ master account — see [docs/STARVPN.md](docs/STARVPN.md)),
-   connect both.
+1. **Mesh first**: [sign up here](http://starvpn.cn/register.html?referralCode=Kurali) — the
+   `referralCode` in that link is what attributes the account, so enter through it rather than
+   typing the domain — then install the StarVPN client on the PC *and* the phone and log each in
+   with its **own member account** (member ≠ master account — see
+   [docs/STARVPN.md](docs/STARVPN.md)), and connect both.
 2. **DSH**: `npm i -g @deepseek-ai/dsh` (Node 22+).
 3. **Run the script for your OS** (or hand the folder to an AI and point it at `AI-INSTALL.md`).
 
@@ -128,7 +130,9 @@ MIT licensed.
 
 **三步**：
 
-1. 电脑和手机各装星空组网客户端，**各用一个成员账号**登录并连接（成员账号 ≠ 主账号，
+1. **先从这个邀请链接注册**：<http://starvpn.cn/register.html?referralCode=Kurali>
+   （链接里的 `referralCode` 才是归属凭据，直接输域名注册不算邀请）。
+   然后电脑和手机各装星空组网客户端，**各用一个成员账号**登录并连接（成员账号 ≠ 主账号，
    见 [docs/STARVPN.md](docs/STARVPN.md)）。
 2. 电脑装 DSH：`npm i -g @deepseek-ai/dsh`（Node 22+）。
 3. 跑你系统的脚本（Linux/macOS：`./dsh-phone.sh`；Windows：双击 `dsh-phone.bat`）。
