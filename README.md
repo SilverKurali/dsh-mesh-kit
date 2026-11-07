@@ -19,9 +19,22 @@ dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.o
 
 → <https://github.com/SilverKurali/dsh-mesh-access> · <https://www.npmjs.com/package/dsh-mesh-access>
 
+npm not reachable? Install the offline tarball from the plugin's Release:
+
+```bash
+dsh plugin --profile web add \
+  https://github.com/SilverKurali/dsh-mesh-access/releases/latest/download/dsh-mesh-access.tgz
+```
+
 The plugin binds a second listener **inside the running server** and reverse-proxies to it, so
 the phone and the desktop share one instance, one session list, and you never see
 `task-board ledger is already owned by …`.
+
+The plugin has also grown past this kit since v1.4: an **entry lock** on the public address
+(key mode: phone opens a `?meshkey=` URL once, then 30 days no prompt; or basic-auth with a
+24 h per-device session), an optional **public entry via your own VPS** (frps/frpc wired into
+the panel — no nginx/certbot hand-config), and a built-in **quick-start page + a copy-paste
+"lazy doc"** you can hand to any AI to do the whole setup for you.
 
 Use the scripts in this repo instead when:
 
@@ -157,6 +170,15 @@ dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.o
 → <https://github.com/SilverKurali/dsh-mesh-access> · <https://www.npmjs.com/package/dsh-mesh-access>
 
 用法就是：**手机上打开这个地址，远程控制电脑上的 DSH**。插件在**正在跑的服务进程内部**再开一个监听口做反向代理，所以手机和电脑是同一个实例、同一份会话列表，也不会出现 `task-board ledger is already owned by …` 那种抢锁报错。
+
+npm 连不上？用插件 Release 里的离线包装：
+
+```bash
+dsh plugin --profile web add \
+  https://github.com/SilverKurali/dsh-mesh-access/releases/latest/download/dsh-mesh-access.tgz
+```
+
+插件从 1.4 起已经比这套脚本多做了几件事：公网地址上的**门锁**（密钥模式：手机打开带 `?meshkey=` 的链接一次，之后 30 天免弹窗；或账号密码模式，24 小时内仅该设备免登录）、**用你自己的服务器做公网入口**（frps/frpc 全进面板，不用手配 nginx/certbot）、面板里的**快速上手页**和一键复制给 AI 的**懒人文档**。
 
 以下情况用本仓库的脚本：
 

@@ -36,6 +36,11 @@ dsh plugin --profile web add dsh-mesh-access --registry=https://registry.npmjs.o
 It binds a second listener inside the running server and reverse-proxies to it; the phone and the
 desktop then share one instance. Ask the user before installing it, and tell them a `dsh web`
 restart is required. Repo: <https://github.com/SilverKurali/dsh-mesh-access>
+If npm is unreachable, install the offline tarball:
+`dsh plugin --profile web add https://github.com/SilverKurali/dsh-mesh-access/releases/latest/download/dsh-mesh-access.tgz`.
+The plugin also ships an in-panel quick-start page, an entry lock (key/basic-auth), and an
+optional own-VPS public entry — if the user wants any of those, switch to the plugin rather
+than extending this kit.
 
 Use the scripts in this repo when the user wants a separate instance, refuses to touch the
 profile, runs an older DSH, or wants the extras (QR code, firewall rule, keepalive, `--check`).
